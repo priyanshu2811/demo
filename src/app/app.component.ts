@@ -34,6 +34,5 @@ export class AppComponent implements OnInit {
   ngOnInit() {
     this.contentfulService.logContent('5sv3GOL9Kle18xRNBINJDw');
     console.log('analytics - ', analytics);
-    logEvent('app','home');
   }
 }
