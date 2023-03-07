@@ -28,11 +28,16 @@ const analytics = getAnalytics(app);
 })
 export class AppComponent implements OnInit {
   title = 'lok-jigyasa-cms';
+  menuVariable: boolean = false;
 
   constructor(private contentfulService: ContentfulService) { }
 
   ngOnInit() {
     this.contentfulService.logContent('5sv3GOL9Kle18xRNBINJDw');
     console.log('analytics - ', analytics);
+  }
+
+  menuClicked() {
+    this.menuVariable = !this.menuVariable;
   }
 }
