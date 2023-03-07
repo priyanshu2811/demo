@@ -1,7 +1,6 @@
 header {
     background-image: url("./../assets/images/Header.jpg");
     background-size: cover;
-    position: absolute;
     width: 100%;
     background-position-y: -80px;
     background-repeat: no-repeat;
@@ -40,7 +39,6 @@ header {
             right: -280px;
             top: 64px;
             width: 280px;
-            // height: 100%;
             display: none;
             text-align: left;
             margin: 0;
