@@ -1,0 +1,13 @@
+<div class="container">
+    <h2>सेवा महे !</h2>
+    <div class="selection-wrapper">
+        <span class="selection" (click)="selection(1)">सबकी जय !</span>
+        <span class="selection" (click)="selection(2)">आयोजन !</span>
+    </div>
+    <div *ngIf="isEvents">
+        <app-events></app-events>
+    </div>
+    <div *ngIf="!isEvents">
+        <app-posts-home></app-posts-home>
+    </div>
+</div>
