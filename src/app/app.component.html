@@ -1,29 +1,35 @@
-<header>
-    <!-- <img src="../assets/images/Header.jpg" alt="Lok-Jigyasa-header-image" class="header-image"> -->
-    <div class="container">
-        <div class="row">
-            <div class="col-md-3 col-sm-3 col-3">
-                <h2>लोक जिज्ञासा</h2>
-            </div>
-            <div class="col-md-9 col-sm-9 col-9 text-end">
-                <div class="menu_icon" (click)="menuClicked()">
-                    <span></span>
-                    <span></span>
-                    <span></span>
+<div id="page-container">
+    <div id="content-wrap">
+        <header>
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-3 col-sm-3 col-3">
+                        <h2>लोक जिज्ञासा</h2>
+                    </div>
+                    <div class="col-md-9 col-sm-9 col-9 text-end">
+                        <div class="menu_icon" (click)="menuClicked()">
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                        </div>
+                        <div class="menu" [class.menuClass]="menuVariable">
+                            <ul>About Us</ul>
+                            <ul>Posts</ul>
+                            <ul>Events</ul>
+                            <ul>Mission</ul>
+                            <ul>Support Us</ul>
+                        </div>
+                    </div>
                 </div>
-                <div class="menu" [class.menuClass]="menuVariable">
-                    <ul>About Us</ul>
-                    <ul>Posts</ul>
-                    <ul>Events</ul>
-                    <ul>Mission</ul>
-                    <ul>Support Us</ul>
-                </div>
             </div>
+            <div class="center">
+                <h1 class="header-text">लोक जिज्ञासा</h1>
+                <h5 class="sub-header-text">"कामये दुःख: तप्तानाम प्राणिनाम आर्तिनाशनम"</h5>
+            </div>
+        </header>
+        <div style="position: relative">
+            <router-outlet></router-outlet>
         </div>
     </div>
-    <div class="center">
-        <h1 class="header-text">लोक जिज्ञासा</h1>
-        <h5 class="sub-header-text">"कामये दुःख: तप्तानाम प्राणिनाम आर्तिनाशनम"</h5>
-    </div>
-</header>
-<router-outlet></router-outlet>
+    <footer id="footer"></footer>
+</div>
