@@ -7,11 +7,11 @@
                 </div>
                 <div class="col-9 post">
                     <h5 class="card-title"> {{ posts.postTitle }} </h5>
-                    <p class="card-text"> {{ posts.mainContent.slice(0, 200) +
+                    <p class="card-text"> {{ posts.mainContent.slice(0, 400) +
                         '...' }} </p>
-                    <p><span>तारीख:</span> {{ posts.postedTIme }} </p>
+                    <!-- <p><span>तारीख:</span> {{ posts.postedTIme }} </p> -->
                     <div class="card-link-wrapper">
-                        <a href="" class="card-link">पूरी जानकारी</a>
+                        <a class="card-link" (click)="gotoFullView(posts.post_id)">पूरा पढ़ें</a>
                     </div>
                 </div>
             </li>
