@@ -1,1 +1,6 @@
-@import "../posts.component.scss"
+@import "../posts.component.scss";
+
+.internal {
+    box-shadow: unset;
+    min-height: unset;
+}
