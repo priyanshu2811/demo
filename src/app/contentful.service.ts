@@ -1,6 +1,7 @@
 import { environment } from './../environments/environment.development';
 import { Injectable } from '@angular/core';
 import * as contentful from 'contentful';
+import { post_data } from './data';
 // import { observable } from 'rxjs/Observable';
 
 @Injectable({
@@ -23,6 +24,11 @@ export class ContentfulService {
       })
       return x;
 ;
+  }
+
+  postData(contentId?: any): JSON {
+    const data = (contentId && contentId.length) ? JSON.parse(JSON.stringify(post_data.filter(posts => posts.post_id === contentId))): post_data;
+    return data;
   }
 
   // client.getEntries()

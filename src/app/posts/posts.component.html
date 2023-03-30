@@ -1,7 +1,5 @@
 <div class="container">
-    <app-post-card [id]="1"></app-post-card>
-    <app-post-card [id]="2"></app-post-card>
-    <app-post-card [id]="3"></app-post-card>
-    <app-post-card [id]="4"></app-post-card>
-    <app-post-card [id]="5"></app-post-card>
+    <ng-container *ngFor="let post of fullData">
+        <app-post-card [id]="post.post_id"></app-post-card>
+    </ng-container>
 </div>

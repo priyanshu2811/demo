@@ -14,13 +14,13 @@
         <div class="">
             <h6>137 Like</h6>
         </div>
-        <div *ngIf="!id.length" class="" (click)="gotoFullView(id)">
+        <div *ngIf="!fullPostsView" class="" (click)="gotoFullView(id)">
             Comments
         </div>
-        <div *ngIf="!id.length" class="" (click)="gotoFullView(id)">
+        <div *ngIf="!fullPostsView" class="" (click)="gotoFullView(id)">
             Read full article
         </div>
-        <div *ngIf="id.length" class="">
+        <div *ngIf="fullPostsView" class="">
             Share
         </div>
     </div>

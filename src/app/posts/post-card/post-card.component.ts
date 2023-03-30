@@ -11,7 +11,7 @@ import { ContentfulService } from 'src/app/contentful.service';
 export class PostCardComponent implements OnInit {
 
   @Input() id: any;
-  mainContent = "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quidem quisquam reprehenderit id istekld dslkd werllfkijwof wlekfjwef fjwpoef fwfjwpfw wofjwfmw we;ffkw;fw,  fwpfwefkkpwokf woefkjpwkfwe fwllf;w;lelmfwle flwekfwe fwekmfmweefmlwkeefmwemf wefmwelkfwelkfnwelk flwkkkeenfwle fwefwejjfwejfwe eflkwenflwkenfwe fklwenmeflkwnef welfknwlkefnwe fwlekefnlwek fwlekfnwek fwmefwelkfwelkfwe  fweekfmmwlkefnnwelef wellekfnlwef wefknmwlefnlwkenfwe lkwenflkwenfwe fwekfnwlekfnwlknfwe  fwlkefnlwkenfwe fwefnlwknfwe fwekfnwelf  wefwlefkwflwef weflwekfnlwef  wefkwefwe fwf efwkelfmweknfoiwrhfoetighutehgieetg egiherff eriferf gjerrnerfi erffo firjfer fggvierfnrnf fjprf foprjfirf oiejrvifwjirio irjfioerfoii ";
+  @Input() fullPostsView?: boolean;
   mainContentView: any;
 
   constructor(
@@ -22,13 +22,15 @@ export class PostCardComponent implements OnInit {
 
   ngOnInit() {
     console.log('id - ', this.id);
-    const content = this.contentfulService.logContent('5sv3GOL9Kle18xRNBINJDw');
-    console.log('contnent - ', content);
-    this.mainContentView = (this.id.length) ? this. mainContent : this.mainContent.slice(0, 500) + '...';
+    console.log('fullPostsView - ', this.fullPostsView);
+    // const content = this.contentfulService.logContent('5sv3GOL9Kle18xRNBINJDw');
+    // console.log('contnent - ', content);
+    const post = JSON.parse(JSON.stringify(this.contentfulService.postData(this.id)));
+    this.mainContentView = (this.fullPostsView) ? post[0].mainContent : post[0].mainContent.slice(0,500) + '...';
   }
 
   gotoFullView(id: any) {
-    if (!id.length) {
+    if (!this.fullPostsView) {
       const url: string = "/posts/" + id
       this.router.navigateByUrl(url);
     }
