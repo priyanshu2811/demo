@@ -13,6 +13,8 @@ export class PostCardComponent implements OnInit {
   @Input() id: any;
   @Input() fullPostsView?: boolean;
   mainContentView: any;
+  title: any;
+  postedTIme: any;
 
   constructor(
     public router: Router,
@@ -27,6 +29,8 @@ export class PostCardComponent implements OnInit {
     // console.log('contnent - ', content);
     const post = JSON.parse(JSON.stringify(this.contentfulService.postData(this.id)));
     this.mainContentView = (this.fullPostsView) ? post[0].mainContent : post[0].mainContent.slice(0,500) + '...';
+    this.title = post[0].postTitle;
+    this.postedTIme = post[0].postedTIme;
   }
 
   gotoFullView(id: any) {

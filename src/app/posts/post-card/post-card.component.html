@@ -1,12 +1,12 @@
 <div class="card internal post">
     <div class="row">
-        <h5>Post Title</h5>
-        <span>10 mins ago</span>
+        <h5 style="font-weight:bold"> {{ title }} </h5>
+        <span> {{ postedTIme }} </span>
     </div>
     <hr>
     <div class="row">
         <div class="post">
-            <p (click)="gotoFullView(id)"> {{ mainContentView }} </p>
+            <p style="text-align: justify" (click)="gotoFullView(id)"> {{ mainContentView }} </p>
         </div>
     </div>
     <hr>
