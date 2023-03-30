@@ -22,26 +22,28 @@
                     </div>
                 </div>
                 <div class="row">
-                    <div class="col-3">
+                    <div class="col-lg-3 col-md-3">
                         <button class="primary">Submit</button>
                     </div>
                 </div>
             </div>
         </div>
-        <ng-container *ngFor="let comment of comments">
-            <div class="comment">
-                <div class="row">
-                    <div class="col-1"></div>
-                    <div class="comments col-11">
-                        <div class="d-flex justify-content-between">
-                            <h6>@ {{ comment.userName }} </h6>
-                            <span> {{ comment.postedTime }} </span>
+        <ng-container *ngIf="comments.length">
+            <ng-container *ngFor="let comment of comments">
+                <div class="comment">
+                    <div class="row">
+                        <div class="col-1"></div>
+                        <div class="comments col-11">
+                            <div class="d-flex justify-content-between">
+                                <h6>@ {{ comment.userName }} </h6>
+                                <span> {{ comment.postedTime }} </span>
+                            </div>
+                            <hr>
+                            <div class="comment-body"> {{ comment.comment }} </div>
                         </div>
-                        <hr>
-                        <div class="comment-body"> {{ comment.comment }} </div>
                     </div>
                 </div>
-            </div>
+            </ng-container>
         </ng-container>
     </div>
 </div>
