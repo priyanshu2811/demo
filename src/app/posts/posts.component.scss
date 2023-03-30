@@ -1,0 +1,38 @@
+.card {
+    margin-top: 20px;
+    margin-bottom: 20px;
+    min-height: 200px;
+    background: #fff;
+    border-radius: 6px;
+    padding: 20px;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+    text-align: left;
+    .internal {
+        box-shadow: unset;
+        min-height: unset;
+    }
+}
+
+.post-comment {
+    input, textarea, button {
+        width: 100%;
+        // margin-top: 10px;
+    }
+    label, button {
+        margin-top: 15px;
+    }
+}
+
+.no-margin {
+    margin-right: 0;
+}
+.comment {
+    .comments {
+        border: 1px #e4e4e4 solid;
+        margin-top: 10px;
+        padding: 10px;
+        hr {
+            color: #aeaeae;
+        }
+    }
+}

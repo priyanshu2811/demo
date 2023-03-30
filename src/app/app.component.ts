@@ -3,7 +3,8 @@ import { Component, OnInit } from '@angular/core';
 
 // Import the functions you need from the SDKs you need
 import { initializeApp } from "firebase/app";
-import { getAnalytics } from "firebase/analytics";
+import { getAnalytics, logEvent } from "firebase/analytics";
+import { Router } from '@angular/router';
 // TODO: Add SDKs for Firebase products that you want to use
 // https://firebase.google.com/docs/web/setup#available-libraries
 
@@ -18,6 +19,8 @@ const firebaseConfig = {
   appId: "1:1070209314089:web:bf4941a737a21900dfdb38",
   measurementId: "G-QXN80QMWY5"
 };
+const app = initializeApp(firebaseConfig);
+const analytics = getAnalytics(app);
 
 @Component({
   selector: 'app-root',
@@ -26,13 +29,34 @@ const firebaseConfig = {
 })
 export class AppComponent implements OnInit {
   title = 'lok-jigyasa-cms';
+  menuVariable: boolean = false;
 
-  constructor(private contentfulService: ContentfulService) { }
+  constructor(private contentfulService: ContentfulService,
+    private router: Router) { }
 
   ngOnInit() {
-    this.contentfulService.logContent('5sv3GOL9Kle18xRNBINJDw');
-    const app = initializeApp(firebaseConfig);
-    const analytics = getAnalytics(app);
-    console.log('analytics - ', analytics);
+    // this.contentfulService.logContent('5sv3GOL9Kle18xRNBINJDw');
+    // console.log('analytics - ', analytics);
+  }
+
+  menuClicked() {
+    this.menuVariable = !this.menuVariable;
+  }
+
+  clicked(list: number) {
+    console.log(list);
+    switch (list) {
+      case 1: {
+        this.router.navigate(['/default']);
+        break;
+      }
+      case 2: {
+        this.router.navigate(['/posts']);
+        break;
+      }
+      default: {
+      }
+
+    }
   }
 }
