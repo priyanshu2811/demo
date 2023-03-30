@@ -1,0 +1,47 @@
+<div class="container">
+
+    <div class="card">
+        <app-post-card [id]="id" [fullPostsView]="fullPostsView"></app-post-card>
+        <div class="no-margin row">
+            <div class="col-1"></div>
+            <div class="card internal post-comment col-11">
+                <div class="row">
+                    <div class="col-6">
+                        <label>Name</label>
+                        <input>
+                    </div>
+                    <div class="col-6">
+                        <label>Email</label>
+                        <input>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-12">
+                        <label>Comment</label>
+                        <textarea></textarea>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-3">
+                        <button class="primary">Submit</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <ng-container *ngFor="let comment of comments">
+            <div class="comment">
+                <div class="row">
+                    <div class="col-1"></div>
+                    <div class="comments col-11">
+                        <div class="d-flex justify-content-between">
+                            <h6>@ {{ comment.userName }} </h6>
+                            <span> {{ comment.postedTime }} </span>
+                        </div>
+                        <hr>
+                        <div class="comment-body"> {{ comment.comment }} </div>
+                    </div>
+                </div>
+            </div>
+        </ng-container>
+    </div>
+</div>

@@ -35,8 +35,8 @@ export class AppComponent implements OnInit {
     private router: Router) { }
 
   ngOnInit() {
-    this.contentfulService.logContent('5sv3GOL9Kle18xRNBINJDw');
-    console.log('analytics - ', analytics);
+    // this.contentfulService.logContent('5sv3GOL9Kle18xRNBINJDw');
+    // console.log('analytics - ', analytics);
   }
 
   menuClicked() {

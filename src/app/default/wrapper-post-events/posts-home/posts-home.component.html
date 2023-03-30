@@ -1,130 +1,20 @@
 <div class="container">
     <ul class="cards">
-        <li class="row card">
-            <div class="col-3 image" >
-                <img src="../../../../assets/images/img-gallery/Paropkari_Deewar.jpg" alt="...">
-            </div>
-            <div class="col-9 post">
-                <h5 class="card-title">परोपकारी दीवार</h5>
-                <p class="card-text">कपड़े अगर आपके पास अधिक है तो यहाँ छोड़ जाएं ,जो आपकी जरुरत की है यहाँ से ले जाएँ।
-                </p>
-                <p><span>तारीख:</span> 15 जनवरी 2021</p>
-                <div class="card-link-wrapper">
-                    <a href="" class="card-link">पूरी जानकारी</a>
+        <ng-container *ngFor="let posts of fullPosts">
+            <li class="row card" (click)="gotoFullView(posts.post_id)">
+                <div *ngIf="posts.imageSrc && posts.imageSrc[0]" class="col-3 image">
+                    <img src={{posts.imageSrc[0]}} alt="Post Image">
                 </div>
-            </div>
-        </li>
-        <li class="row card">
-            <div class="col-3 image" >
-                <img src="../../../../assets/images/img-gallery/Paropkari_Deewar.jpg" alt="...">
-            </div>
-            <div class="col-9 post">
-                <h5 class="card-title">परोपकारी दीवार</h5>
-                <p class="card-text">कपड़े अगर आपके पास अधिक है तो यहाँ छोड़ जाएं ,जो आपकी जरुरत की है यहाँ से ले जाएँ।
-                </p>
-                <p><span>तारीख:</span> 15 जनवरी 2021</p>
-                <div class="card-link-wrapper">
-                    <a href="" class="card-link">पूरी जानकारी</a>
+                <div class="col-9 post">
+                    <h5 class="card-title"> {{ posts.postTitle }} </h5>
+                    <p class="card-text"> {{ posts.mainContent.slice(0, 200) +
+                        '...' }} </p>
+                    <p><span>तारीख:</span> {{ posts.postedTIme }} </p>
+                    <div class="card-link-wrapper">
+                        <a href="" class="card-link">पूरी जानकारी</a>
+                    </div>
                 </div>
-            </div>
-        </li>
-        <li class="row card">
-            <div class="col-3 image" >
-                <img src="../../../../assets/images/img-gallery/Paropkari_Deewar.jpg" alt="...">
-            </div>
-            <div class="col-9 post">
-                <h5 class="card-title">परोपकारी दीवार</h5>
-                <p class="card-text">कपड़े अगर आपके पास अधिक है तो यहाँ छोड़ जाएं ,जो आपकी जरुरत की है यहाँ से ले जाएँ।
-                </p>
-                <p><span>तारीख:</span> 15 जनवरी 2021</p>
-                <div class="card-link-wrapper">
-                    <a href="" class="card-link">पूरी जानकारी</a>
-                </div>
-            </div>
-        </li>
-        <li class="row card">
-            <div class="col-3 image" >
-                <img src="../../../../assets/images/img-gallery/Paropkari_Deewar.jpg" alt="...">
-            </div>
-            <div class="col-9 post">
-                <h5 class="card-title">परोपकारी दीवार</h5>
-                <p class="card-text">कपड़े अगर आपके पास अधिक है तो यहाँ छोड़ जाएं ,जो आपकी जरुरत की है यहाँ से ले जाएँ।
-                </p>
-                <p><span>तारीख:</span> 15 जनवरी 2021</p>
-                <div class="card-link-wrapper">
-                    <a href="" class="card-link">पूरी जानकारी</a>
-                </div>
-            </div>
-        </li>
-        <li class="row card">
-            <div class="col-3 image" >
-                <img src="../../../../assets/images/img-gallery/Paropkari_Deewar.jpg" alt="...">
-            </div>
-            <div class="col-9 post">
-                <h5 class="card-title">परोपकारी दीवार</h5>
-                <p class="card-text">कपड़े अगर आपके पास अधिक है तो यहाँ छोड़ जाएं ,जो आपकी जरुरत की है यहाँ से ले जाएँ।
-                </p>
-                <p><span>तारीख:</span> 15 जनवरी 2021</p>
-                <div class="card-link-wrapper">
-                    <a href="" class="card-link">पूरी जानकारी</a>
-                </div>
-            </div>
-        </li>
-        <li class="row card">
-            <div class="col-3 image" >
-                <img src="../../../../assets/images/img-gallery/Paropkari_Deewar.jpg" alt="...">
-            </div>
-            <div class="col-9 post">
-                <h5 class="card-title">परोपकारी दीवार</h5>
-                <p class="card-text">कपड़े अगर आपके पास अधिक है तो यहाँ छोड़ जाएं ,जो आपकी जरुरत की है यहाँ से ले जाएँ।
-                </p>
-                <p><span>तारीख:</span> 15 जनवरी 2021</p>
-                <div class="card-link-wrapper">
-                    <a href="" class="card-link">पूरी जानकारी</a>
-                </div>
-            </div>
-        </li>
-        <li class="row card">
-            <div class="col-3 image" >
-                <img src="../../../../assets/images/img-gallery/Paropkari_Deewar.jpg" alt="...">
-            </div>
-            <div class="col-9 post">
-                <h5 class="card-title">परोपकारी दीवार</h5>
-                <p class="card-text">कपड़े अगर आपके पास अधिक है तो यहाँ छोड़ जाएं ,जो आपकी जरुरत की है यहाँ से ले जाएँ।
-                </p>
-                <p><span>तारीख:</span> 15 जनवरी 2021</p>
-                <div class="card-link-wrapper">
-                    <a href="" class="card-link">पूरी जानकारी</a>
-                </div>
-            </div>
-        </li>
-        <li class="row card">
-            <div class="col-3 image" >
-                <img src="../../../../assets/images/img-gallery/Paropkari_Deewar.jpg" alt="...">
-            </div>
-            <div class="col-9 post">
-                <h5 class="card-title">परोपकारी दीवार</h5>
-                <p class="card-text">कपड़े अगर आपके पास अधिक है तो यहाँ छोड़ जाएं ,जो आपकी जरुरत की है यहाँ से ले जाएँ।
-                </p>
-                <p><span>तारीख:</span> 15 जनवरी 2021</p>
-                <div class="card-link-wrapper">
-                    <a href="" class="card-link">पूरी जानकारी</a>
-                </div>
-            </div>
-        </li>
-        <li class="row card">
-            <div class="col-3 image" >
-                <img src="../../../../assets/images/img-gallery/Paropkari_Deewar.jpg" alt="...">
-            </div>
-            <div class="col-9 post">
-                <h5 class="card-title">परोपकारी दीवार</h5>
-                <p class="card-text">कपड़े अगर आपके पास अधिक है तो यहाँ छोड़ जाएं ,जो आपकी जरुरत की है यहाँ से ले जाएँ।
-                </p>
-                <p><span>तारीख:</span> 15 जनवरी 2021</p>
-                <div class="card-link-wrapper">
-                    <a href="" class="card-link">पूरी जानकारी</a>
-                </div>
-            </div>
-        </li>
+            </li>
+        </ng-container>
     </ul>
 </div>
