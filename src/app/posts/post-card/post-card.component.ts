@@ -24,12 +24,13 @@ export class PostCardComponent implements OnInit {
     console.log('id - ', this.id);
     const content = this.contentfulService.logContent('5sv3GOL9Kle18xRNBINJDw');
     console.log('contnent - ', content);
-    this.mainContentView = (this.id.length) ? this. mainContent : this.mainContent.split(',')[0];
-
+    this.mainContentView = (this.id.length) ? this. mainContent : this.mainContent.slice(0, 500) + '...';
   }
 
   gotoFullView(id: any) {
-    const url: string = "/posts/" + id
-    this.router.navigateByUrl(url);
+    if (!id.length) {
+      const url: string = "/posts/" + id
+      this.router.navigateByUrl(url);
+    }
   }
 }

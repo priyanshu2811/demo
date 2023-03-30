@@ -1,17 +1,12 @@
 <div class="card internal post">
     <div class="row">
-        <!-- <div class="col-10"> -->
         <h5>Post Title</h5>
         <span>10 mins ago</span>
-        <!-- </div> -->
-        <!-- <div class="col-2 feedback">
-            <span class="like btn-primary">like Share</span>
-        </div> -->
     </div>
     <hr>
     <div class="row">
         <div class="post">
-            <p> {{ mainContentView }} </p>
+            <p (click)="gotoFullView(id)"> {{ mainContentView }} </p>
         </div>
     </div>
     <hr>
