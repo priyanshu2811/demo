@@ -1,0 +1,32 @@
+<div class="card internal post">
+    <div class="row">
+        <!-- <div class="col-10"> -->
+        <h5>Post Title</h5>
+        <span>10 mins ago</span>
+        <!-- </div> -->
+        <!-- <div class="col-2 feedback">
+            <span class="like btn-primary">like Share</span>
+        </div> -->
+    </div>
+    <hr>
+    <div class="row">
+        <div class="post">
+            <p> {{ mainContentView }} </p>
+        </div>
+    </div>
+    <hr>
+    <div class="d-flex justify-content-between">
+        <div class="">
+            <h6>137 Like</h6>
+        </div>
+        <div *ngIf="!id.length" class="" (click)="gotoFullView(id)">
+            Comments
+        </div>
+        <div *ngIf="!id.length" class="" (click)="gotoFullView(id)">
+            Read full article
+        </div>
+        <div *ngIf="id.length" class="">
+            Share
+        </div>
+    </div>
+</div>
